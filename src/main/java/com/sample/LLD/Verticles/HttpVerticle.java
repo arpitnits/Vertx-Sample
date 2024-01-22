@@ -19,7 +19,7 @@ public class HttpVerticle extends AbstractVerticle {
     Router router = Router.router(vertx);
     router.route().handler(BodyHandler.create());
 
-    router.post(GET_USER).consumes(APPLICATION_JSON).produces(APPLICATION_JSON).handler(rc -> apiHandler(rc, GET_USER));
+    router.get(GET_USER).consumes(APPLICATION_JSON).produces(APPLICATION_JSON).handler(rc -> apiHandler(rc, GET_USER));
 
     createHttpServer(startPromise, router);
   }
